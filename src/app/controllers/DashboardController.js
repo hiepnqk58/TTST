@@ -4,9 +4,9 @@
 // const activeDeviceModel = require("./../models/ActiveDevice");
 // const softwareManagerModel = require("./../models/SoftwareManager");
 // const unitsModel = require("./../models/Unit");
-const agentModel = require("./../models/Agents");
-const eventModel = require("./../models/Event");
-const dbModel = require("./../models/Db");
+// const agentModel = require("./../models/Agents");
+// const eventModel = require("./../models/Event");
+// const dbModel = require("./../models/Db");
 const userModel = require("./../models/User");
 const {
   successResponse,
@@ -22,23 +22,23 @@ module.exports.total = async (req, res) => {
     let tenMinutesAgo = moment().subtract(10, "minutes");
     tenMinutesAgo = tenMinutesAgo.format("YYYY-MM-DD HH:mm:ss");
     const [
-      totalOnline,
-      totalAgent,
-      totalAlert,
-      totalEvent,
-      totalDb,
+      // totalOnline,
+      // totalAgent,
+      // totalAlert,
+      // totalEvent,
+      // totalDb,
       totalUser,
     ] = await Promise.all([
-      agentModel.find({ last_seen: { $gte: tenMinutesAgo } }).count({}),
-      agentModel.find({}).count({}),
-      eventModel
-        .find({
-          level: 3,
-          created_at: { $lte: new Date(endDate), $gte: new Date(startDate) },
-        })
-        .count({}),
-      eventModel.find({}).count({}),
-      dbModel.find({}).count({}),
+      // agentModel.find({ last_seen: { $gte: tenMinutesAgo } }).count({}),
+      // agentModel.find({}).count({}),
+      // eventModel
+      //   .find({
+      //     level: 3,
+      //     created_at: { $lte: new Date(endDate), $gte: new Date(startDate) },
+      //   })
+      //   .count({}),
+      // eventModel.find({}).count({}),
+      // dbModel.find({}).count({}),
       userModel.find({}).count({}),
     ]);
     let data = {

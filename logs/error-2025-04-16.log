@@ -1,8 +1,0 @@
-[2025-04-16 18:09:13] error: [loaders:initMongodb] Failed to connect to MongoDB - connect ECONNREFUSED ::1:27017 - 
-
-[2025-04-16 18:09:13] error: [:server] Application is crashed: Error: Failed to connect to MongoDB - 
-
-[2025-04-16 18:14:02] error: [loaders:initMongodb] Failed to connect to MongoDB - connect ECONNREFUSED ::1:27017 - 
-
-[2025-04-16 18:14:02] error: [:server] Application is crashed: Error: Failed to connect to MongoDB - 
-
